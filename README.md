@@ -16,8 +16,8 @@ Ensure you have Python 3.x installed. You also need to install the following dep
 
 ## Clone the repository
 ```
-git clone https://github.com/your-username/myelin-sheath-detection.git
-cd myelin-sheath-detection
+https://github.com/Vishnutha/Neural_Biopsy.git
+cd Neural_Biopsy
 ```
 ## Run Patch Generation.py
 ```
