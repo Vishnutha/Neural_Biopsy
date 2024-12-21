@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+import os
 
 # Load the ima
 image = cv2.imread('data/set1_Image_01_40x_bf_02_fossicle_binary.png')
@@ -49,7 +50,13 @@ for row in range(num_patches_y):
             "coordinates": (x_start, y_start, x_end, y_end),
             "image": patch
         })
-
+output_dir = "patches_512x512"
+if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+# Optional: Save patches as separate files
+for idx, patch_info in enumerate(patches):
+    patch_image = patch_info["image"]
+    patch_image.save(f"{output_dir}/systematic_patch_{idx + 1}.png")  
 # # Display the first 5 patches for verification
 # for idx, patch_info in enumerate(patches[:5]):
 #     patch_image = patch_info["image"]

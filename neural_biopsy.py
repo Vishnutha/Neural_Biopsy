@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 from PIL import Image
+import os
 
 for num in range(1, 82):
     patch1 = Image.open(f"patches_512x512/systematic_patch_{num}.png")
@@ -92,8 +93,12 @@ for num in range(1, 82):
     axes[2].axis('off')
 
     plt.tight_layout()
-    plt.savefig(f'results/{directory_name}/output_image_dir_{num}', dpi=300)
-    print(f"Subplots saved to results/{directory_name} _ {num}")
+    output_dir = "results/" + directory_name
+    output_dir = f'results/{directory_name}'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    plt.savefig(f'{output_dir}/output_image_dir_{num}', dpi=300)
+    print(f"Subplots saved to {output_dir} _ {num}")
 
     for axon_data in radii_data:
         obj_id = axon_data["axon_id"]
