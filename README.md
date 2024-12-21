@@ -26,7 +26,7 @@ python3 patch_generation.py
 
 ## Run Neural Biopsy Processing to detect contours and generate results
 ```
-python neural_biopsy.py
+python3 neural_biopsy.py
 ```
 
 ## Open the Jupyter Notebook for further analysis and results visualization
